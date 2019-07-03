@@ -19,6 +19,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { CustomSerializer } from './shared/utils';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 
 
 const routes: Routes = [
@@ -55,7 +56,8 @@ const routes: Routes = [
     StoreRouterConnectingModule.forRoot({
       stateKey: 'router',
       serializer: CustomSerializer
-    })
+    }),
+    AkitaNgDevtools.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

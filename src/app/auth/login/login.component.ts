@@ -3,12 +3,12 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 import {Store} from "@ngrx/store";
 
-import {AuthService} from "../auth.service";
+import {AuthService} from "../state/auth.service";
 import {tap} from "rxjs/operators";
 import {noop} from "rxjs";
 import {Router} from "@angular/router";
 import { AppState } from '../../reducers';
-import { Login } from '../auth.actions';
+import { Login } from '../store/auth.actions';
 
 @Component({
   selector: 'login',

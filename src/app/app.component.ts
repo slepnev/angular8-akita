@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { AppState } from './reducers';
-import { Logout } from './auth/auth.actions';
+import { Logout } from './auth/store/auth.actions';
 import { Observable } from 'rxjs';
-import { isLoggedIn, isLoggedOut } from './auth/auth.selectors';
+import { isLoggedIn, isLoggedOut } from './auth/store/auth.selectors';
 import { Router } from '@angular/router';
 
 @Component({

@@ -7,10 +7,10 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { StoreModule } from '@ngrx/store';
-import { AuthService } from './auth.service';
-import { authReducer } from './auth.reducer';
+import { AuthService } from './state/auth.service';
+import { authReducer } from './store/auth.reducer';
 import { EffectsModule } from '@ngrx/effects';
-import { AuthEffects } from './auth.effects';
+import { AuthEffects } from './store/auth.effects';
 
 
 @NgModule({
