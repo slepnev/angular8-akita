@@ -22,8 +22,7 @@ export class LoginComponent implements OnInit {
   constructor(
       private fb:FormBuilder,
       private auth: AuthService,
-      private router:Router,
-      private store: Store<AppState>) {
+      private router:Router) {
 
       this.form = fb.group({
           email: ['test@angular-university.io', [Validators.required]],
@@ -42,7 +41,7 @@ export class LoginComponent implements OnInit {
       .pipe(
         tap(user => {
 
-          this.store.dispatch(new Login({user}));
+          this.auth.loginStore(user);
 
           this.router.navigateByUrl('/courses');
 
