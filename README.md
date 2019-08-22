@@ -1,2 +1,2 @@
-# angular8-akita
-Angular 8 Akita state management
+# Angular 8 Ivy - Akita
+Angular 8 Ivy - Akita state management
