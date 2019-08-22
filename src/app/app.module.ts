@@ -50,6 +50,7 @@ const routes: Routes = [
     MatListModule,
     MatToolbarModule,
     AuthModule.forRoot(),
+
     StoreModule.forRoot(reducers, {metaReducers}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([]),
@@ -57,6 +58,7 @@ const routes: Routes = [
       stateKey: 'router',
       serializer: CustomSerializer
     }),
+
     AkitaNgDevtools.forRoot()
   ],
   providers: [],
