@@ -5,11 +5,23 @@ import { User } from '../../model/user.model';
 import { AuthStore } from './auth.store';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
 
   constructor(private http: HttpClient, private authStore: AuthStore) {
 
+  }
+
+  init() {
+    const userData = localStorage.getItem('user');
+
+    if (userData) {
+      this.loginStore(JSON.parse(userData));
+    } else {
+      this.logoutStore();
+    }
   }
 
   login(email: string, password: string): Observable<User> {
