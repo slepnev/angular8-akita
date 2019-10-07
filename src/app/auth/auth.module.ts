@@ -1,4 +1,4 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { MatCardModule } from '@angular/material/card';
@@ -6,7 +6,6 @@ import { MatInputModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { AuthService } from './state/auth.service';
 
 
 @NgModule({
@@ -22,13 +21,4 @@ import { AuthService } from './state/auth.service';
   exports: [LoginComponent]
 })
 export class AuthModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: AuthModule,
-      providers: [
-        AuthService
-
-      ]
-    };
-  }
 }

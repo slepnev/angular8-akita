@@ -14,17 +14,21 @@ export class AppComponent implements OnInit {
   isLoggedIn$: Observable<boolean>;
   isLoggedOut$: Observable<boolean>;
 
-  constructor(private authQuery: AuthQuery, private authService: AuthService, private routre: Router) {
-
+  constructor(private authQuery: AuthQuery,
+              private authService: AuthService,
+              private router: Router) {
   }
 
   ngOnInit() {
+    this.authService.init();
     this.isLoggedIn$ = this.authQuery.isLoggedIn$;
     this.isLoggedOut$ = this.authQuery.isLoggedOut$;
   }
 
   logout() {
     this.authService.logoutStore();
+    localStorage.removeItem('user');
+    this.router.navigateByUrl('/login');
   }
 
 
